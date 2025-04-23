@@ -67,16 +67,18 @@ days(num)
 
 //4 Given an array of password strings, use if...else to: log "Strong" if length >= 8, and "Weak" otherwise.
 
-function checkPassword(password) {
+function checkPassword(passwords) {
+   return passwords.map(password=> {
     if (password.length >= 8) {
         return `Strong password`
     }
     else {
         return `Weak password, please enter a new password`
     }
+});
 }
-let password = "mnbvftgyuijdlkkmjh"
-console.log(checkPassword(password))
+let passwords = ["mnbvftgyuijdlkkmjh","hi","vbjkl"]
+console.log(checkPassword(passwords))
 
 //5 You're building a multilingual site. Use a switch to show greetings based on language codes. I.e "en" → "Hello", "fr" → "Bonjour", "sw" → "Habari".
 
@@ -121,18 +123,18 @@ let temperatures=[40,30,20,10,30,29]
 console.log(weatherCondition(temperatures))
 
 //7 Users are queued to register. Use a while loop to remove and print each name until the queue is empty.
-function registration(user2){
-    let x=user2.length
+function registration(users){
+    let x=users.length
     let i=0
     while (i<x){
         i++;
-       console.log(user2.shift());
+       console.log(users.shift());
      
     }
 
 }
-let user2 =["Mahder","Yordanos","Nahela"]
-registration(user2);
+let users =["Mahder","Yordanos","Nahela"]
+registration(users);
 
 //8 Students retake a test until they score 50 or more. Use do...while to simulate attempts, increasing the score by 10 each time until it's >= 50.
 function retakeTest(score){
@@ -149,5 +151,5 @@ function retakeTest(score){
 
     }
 }
-let score=60
+let score=5
 retakeTest(score)
